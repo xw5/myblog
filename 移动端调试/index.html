@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weinre调试</title>
+    <script type="text/javascript" src="http://192.168.1.104:8088/target/target-script-min.js#blogtest"></script>
+</head>
+<body>
+    <h1>测试页面</h1>
+    <button>测试</button>
+    <script type="text/javascript">
+    console.log("----测试log0----");// 此log不会打印，应该是调试初始化需要时间
+    setTimeout(function(){
+        console.log("----测试log1----");
+    }, 5000)
+    </script>
+</body>
+</html>
