@@ -12,7 +12,7 @@ Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以�
 
 最近在拉取代码时报如下错误，其中有句最显眼的是“Filename too long”，大概意思是说文件名太长，详细错误如下图示：
 
-![Git%20for%20windows%E4%B8%8BFilename%20too%20long%20fbfad868416447168b803350105c94ec/Untitled.png](Git%20for%20windows%E4%B8%8BFilename%20too%20long%20fbfad868416447168b803350105c94ec/Untitled.png)
+![错误图示](error.png)
 
 ### **Why?**
 
