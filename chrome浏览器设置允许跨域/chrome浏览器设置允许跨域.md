@@ -27,3 +27,6 @@ MAC 上Chrome跨域设置，是直接终端敲命令设置，不过每次mac重�
 ### 插件解决跨域
 
 下载chrome插件Access-Control-Allow-Origin，可以解决浏览器跨域问题，注意插件版本尽量选用新一点的，我一开始装了个版本较低的没有效果，后面换成版本新一点的0.1.5是可以，我用的版本插件下载地址：[https://download.csdn.net/download/u011669024/21331760?spm=1001.2014.3001.5503](https://download.csdn.net/download/u011669024/21331760?spm=1001.2014.3001.5503)
+
+![插件界面截图](./plugin_img.png)
+
