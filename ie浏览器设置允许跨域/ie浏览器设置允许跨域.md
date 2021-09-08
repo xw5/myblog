@@ -8,14 +8,14 @@
 
 1. 启动IE，点击工具→Internet选项
 
-    ![Untitled](ie%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%B7%A8%E5%9F%9F%20fcc6761fa63e4913a5a7a190f4bcad9d/Untitled.png)
+    ![示例图](./step1.png)
 
 2. 选择安全→自定义级别
 
-    ![Untitled](ie%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%B7%A8%E5%9F%9F%20fcc6761fa63e4913a5a7a190f4bcad9d/Untitled%201.png)
+    ![示例图](./step2.png)
 
 3. 启用【其它】选项下的下面二项
 
-    ![Untitled](ie%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%B7%A8%E5%9F%9F%20fcc6761fa63e4913a5a7a190f4bcad9d/Untitled%202.png)
+    ![示例图](./step3.png)
 
     至此IE已经可以跨域请求数据了。
