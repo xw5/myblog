@@ -11,7 +11,7 @@
 - 资源库(Repository或Git Directory)、本地仓库：安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本
 - git仓库(Remote Directory)、远程仓库：托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
 
-![1090617-20181008211557402-232838726.png](Git%E4%BD%BF%E7%94%A8%E5%A4%87%E5%BF%98%E5%BD%95%200f618b0dd5ee4d69a9501e3000e7f111/1090617-20181008211557402-232838726.png)
+![Git四个工作区域](.\4个工作区.png)
 
 ## GIT文件的五种状态
 
@@ -21,7 +21,7 @@
 - 已暂存（staged）：暂存状态. 执行git commit则将修改同步到git仓库中, 这时库中的文件和工作区文件变为一致, 文件为Unmodify状态. 执行git reset HEAD [filename]取消暂存,文件状态为Modified
 - 已提交（committed）：已提交状态，执行git reset可以变为暂存状态，执行git push可以把本地仓库文件推送到远程仓库
 
-![1090617-20181008212245877-52530897.png](Git%E4%BD%BF%E7%94%A8%E5%A4%87%E5%BF%98%E5%BD%95%200f618b0dd5ee4d69a9501e3000e7f111/1090617-20181008212245877-52530897.png)
+![GIT文件的五种状态](.\5个文件状态.png)
 
 ## Git的工作流程
 
@@ -279,7 +279,7 @@ Git推荐的工作规范流程：[https://www.ruanyifeng.com/blog/2015/08/git-us
 
 阮一峰整理的git常用命令清单：[https://www.bookstack.cn/books/git-command](https://www.bookstack.cn/books/git-command)
 
-## gitignore文件
+## .gitignore文件
 
 让git忽略某些文件提交，如node_modules、.ideat等，被过滤掉的文件不会出现在git仓库中（gitlab或github），本地工作区中还有，只是push的时候不会上传
 
@@ -321,7 +321,7 @@ fd1/*
 !/fw/sf/
 ```
 
-gitignore配置参考链接：[https://www.cnblogs.com/kevingrace/p/5690241.html](https://www.cnblogs.com/kevingrace/p/5690241.html)
+.gitignore配置参考链接：[https://www.cnblogs.com/kevingrace/p/5690241.html](https://www.cnblogs.com/kevingrace/p/5690241.html)
 
 ## 学习教程推荐
 
