@@ -1,4 +1,4 @@
-# 入门JavaScript正则表达式
+# JavaScript正则表达式备忘录
 
 ## 概念
 
