@@ -30,10 +30,12 @@
 3. 将暂存区域的文件提交到git仓库
 4. 将本地仓库的代码推送到远程仓库
 
+Git推荐的工作规范流程：[https://www.ruanyifeng.com/blog/2015/08/git-use-process.html](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
+
 ## Git常用命令
 
 - git config
-    
+  
     ```bash
     # 显示当前的Git配置
     git config --list
@@ -47,7 +49,7 @@
     ```
     
 - git init
-    
+  
     ```bash
     # 在当前工作目录初始化git仓库
     git init
@@ -57,7 +59,7 @@
     ```
     
 - git status
-    
+  
     ```bash
     # 查看所有文件状态
     git status
@@ -67,7 +69,7 @@
     ```
     
 - git log
-    
+  
     ```bash
     # 查看提交记录
     git log
@@ -77,7 +79,7 @@
     ```
     
 - git add：工作区文件 → 暂存区
-    
+  
     ```bash
     # 添加指定文件到暂存区
     git add [file1] [file2] ... 
@@ -90,7 +92,7 @@
     ```
     
 - git rm
-    
+  
     ```bash
     # 从全部区域删除，删除暂存区或分支上、工作区的文件，会添加一个提交记录
     git rm [filename]
@@ -100,7 +102,7 @@
     ```
     
 - git commit： 暂存区 → 本地仓库
-    
+  
     ```bash
     # 将暂存区的资源提交到本地仓库
     git commit -m "该提交说明"
@@ -110,7 +112,7 @@
     ```
     
 - git reset
-    
+  
     ```bash
     # 移除不必要的添加到暂存区的文件
     git reset HEAD [filename]
@@ -132,7 +134,7 @@
     ```
     
 - git branch：查看分支，分支相当于当前项目的备份，分支与分支之间独立
-    
+  
     ```bash
     # 新建分支
     git branch <branch name>
@@ -148,7 +150,7 @@
     ```
     
 - git checkout
-    
+  
     ```bash
     # 切换分支
     git checkout <branch name>
@@ -158,13 +160,13 @@
     ```
     
 - git diff：查看差异
-    
+  
     ```bash
     git diff <branch name> 查看本地分支和对应分支的差异
     ```
     
 - git merge：合并分支
-    
+  
     ```bash
     # 指定分支合并到当前分支
     git merge <branch name>
@@ -178,14 +180,14 @@
     ```
     
 - git clone
-    
+  
     ```bash
     # 下载一个项目和它的整个代码历史
     git clone [url]
     ```
     
 - git remote：关联远程仓库
-    
+  
     ```bash
     # 添加仓库关联信息
     git remote add <repo name> <repo url>
@@ -195,7 +197,7 @@
     ```
     
 - git push：将仓库文件推送至远程仓库
-    
+  
     ```bash
     # 把本地分支推送的远程分支，在远程新建一个同步分支，初次推送执行
     git push --set-upstream origin <branch name>
@@ -205,21 +207,21 @@
     ```
     
 - git pull：将远程仓库文件拉取至本地仓库（工作区）
-    
+  
     ```bash
     # 拉取远程仓库分文件至本地，等于git fetch + git merge
     git pull
     ```
     
 - git revert：撒消某次执行
-    
+  
     ```bash
     # 撤消指定提交 会添加一个revert提交记录
     git revert <commit hash>
     ```
     
 - git cherry-pick：指定的提交应用于当前分支，在当前分支产生一个新的提交，哈希值会不一样。
-    
+  
     ```bash
     # 指定的提交（commit）应用于当前所在分支
     git cherry-pick <commit hash>
@@ -247,7 +249,7 @@
     cherry pick参考链接：[http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
     
 - git rebase：中文名变基，提取我们在当前分支上的改动到指定分支上
-    
+  
     ```bash
     # 主要用于分支合并，可以让merge操作变得顺滑，善用git rebase可以让我们的提交历史变得更加优雅，也可以实现一些比较棘手的功能
     # 当前分支的提交应用到指定分支
