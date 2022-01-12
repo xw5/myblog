@@ -276,6 +276,33 @@ Git推荐的工作规范流程：[https://www.ruanyifeng.com/blog/2015/08/git-us
     
     上面命令中rebase是最难懂的，知乎文章：[https://zhuanlan.zhihu.com/p/271677627](https://zhuanlan.zhihu.com/p/271677627)
     
+- git tag 给仓库历史中的某一个提交打上标签，以示重要。 比较有代表性的是人们会使用这个功能来标记发布结点（ `v1.0` 、 `v2.0` 等等）
+  
+    ```bash
+    # 打标签
+    git tag
+    # 只查看1.8.5系列的标签
+    git tag -l "v1.8.5*"
+    # 打标签
+    git tag <tagname>
+    # 附注标签
+    git tag -a <tagname> -m "注释信息"
+    # 基于过去的某一个提交打标签
+    git tag -a <tagname> <commitid>
+    # 推送标签到远程
+    	# 指定标签
+    git push origin <tagname>
+    	# 所有标签一次推送远程
+    git push origin --tags
+    # 删除标签
+    	# 删除本地的
+    git tag -d <tagname>
+    	# 删除远程标签
+    git push origin --delete <tagname>
+    # 基于标签检索出新分支
+    git checkout -b <branch> <tagname>
+    ```
+    
 
 阮一峰整理的git常用命令清单：[https://www.bookstack.cn/books/git-command](https://www.bookstack.cn/books/git-command)
 
