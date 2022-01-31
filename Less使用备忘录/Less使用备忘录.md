@@ -12,7 +12,7 @@ Less （Leaner Style Sheets 的缩写） 是一门向后兼容的 CSS 扩展语�
 
 坏处：在客户端解析Less,造成性能的浪费，不利于维护
 
-![Untitled](Less%E4%BD%BF%E7%94%A8%E5%A4%87%E5%BF%98%E5%BD%95%203f2a1893738348daaab528c26eb064c2/Untitled.png)
+![lessjs](./lessjs.png)
 
 ### Koala编译器
 
