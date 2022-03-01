@@ -14,6 +14,8 @@
 
 ### 解决方案
 
+### 方式1
+
 在JS动态修改表单域值的时候，可以手动触发一下表单input事件
 
 ```html
@@ -79,6 +81,51 @@ Event MDN：[https://developer.mozilla.org/zh-CN/docs/Web/API/Event/Event](https
 
 [https://jsbin.com/pijeqezijo/edit?html,js,console,output](https://jsbin.com/pijeqezijo/edit?html,js,console,output)
 
+### 方式2
+
+通过`Mutation Observer API`用来监视 `DOM`变动。`DOM`的任何变动，比如节点的增减、属性的变动、文本内容的变动，这个 `API`都可以得到通知，示例代码如下：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<div class="test" id="app">
+  <div class="item item-input" contentEditable></div>
+</div>
+</body>
+</html>
+```
+
+```jsx
+  // Firefox和Chrome早期版本中带有前缀
+  var MutationObserver = window.MutationObserver|| 
+      window.WebKitMutationObserver || 
+      window.MozMutationObserver;
+  // 选择元素
+  var input = document.querySelector('.item-input');
+  // 配置观察选项:
+  var inputConfig = {
+    childList: true,
+    subtree: true,
+    characterData: true
+  }
+  // 创建观察者对象
+  var observerInput = new MutationObserver(function(mutations) {
+    console.log('--observer item input--');
+  });
+  // 传入目标节点和观察选项
+  observerInput.observe(input, inputConfig);
+  // 主动触发一次
+  input.innerHTML = '123654';
+```
+
+在线测试：[https://jsbin.com/nakobuv/2/edit?html,js,console,output](https://jsbin.com/nakobuv/2/edit?html,js,console,output)
+
 ### 注意事项
 
-以上解决方法有一定的兼容性风险，ie全废，如果对IE有兼容有要求，可以把input里的处理逻辑抽取成函数，在动态修改表单值的时候，手动调一下上面抽取的函数。
+以上解决方法有一定的兼容性风险，第一种情况ie全废，第二种兼容IE11，如果对IE低版本有兼容要求，可以把input里的处理逻辑抽取成函数，在动态修改表单值的时候，手动调一下上面抽取的函数。
