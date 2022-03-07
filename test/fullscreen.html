@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Fullscreen测试</title>
+  <style>
+    *{
+      padding:0;
+      margin: 0;
+    }
+    .fullscrenn_element{
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: green;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="fullscrenn_element">全屏</div>
+  <script>
+    var elementWrap = document.querySelector('.fullscrenn_element');
+
+    if (document.fullscreenEnabled) {
+      init();
+    } else {
+      console.log('全屏模式不可用！');
+    }
+
+    function init() {
+
+      addEvent(elementWrap);
+  
+      elementWrap.addEventListener('click', function() {
+        console.log('--当前全屏元素--：', document.fullscreenElement);
+        if (document.fullscreenElement) {
+          cancelFullScreen(elementWrap);
+        } else {
+          launchFullScreen(elementWrap)
+        }
+      }, false);
+    }
+
+
+    /**
+    * 指定元素进入全屏模式
+    * @param {element} element
+    */
+    function launchFullScreen(element) {
+      if(element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if(element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if(element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
+
+    /**
+    * 退出全屏模式
+    */
+    function cancelFullScreen() {
+      if(document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if(document.mozExitFullscreen) {
+        document.mozExitFullscreen();
+      } else if(document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if(document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+
+    /*
+    * 绑定全屏事件
+    * param {Element} element
+    */
+    function addEvent(element) {
+      element.addEventListener('fullscreenchange', function(e) {
+        console.log('--fullscreenchange--:', e);
+      }, false);
+    }
+
+
+  </script>
+</body>
+</html>
