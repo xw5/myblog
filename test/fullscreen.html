@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Fullscreen测试</title>
-  <style>
+  <style type="text/css">
     *{
       padding:0;
       margin: 0;
@@ -18,14 +18,29 @@
       background-color: green;
       color: #fff;
     }
+		.fullscrenn_element:-webkit-full-screen{
+			background-color: red;
+		}
+		
+		.fullscrenn_element:-moz-fullscreen{
+			background-color: red;
+		}
+		
+		.fullscrenn_element:-ms-fullscreen{
+			background-color: red;
+		}
+		
+		.fullscrenn_element:fullscreen{
+			background-color: red;
+		}
   </style>
 </head>
 <body>
   <div class="fullscrenn_element">全屏</div>
-  <script>
+  <script type="text/javascript">
     var elementWrap = document.querySelector('.fullscrenn_element');
 
-    if (document.fullscreenEnabled) {
+    if (fullscreenEnabled()) {
       init();
     } else {
       console.log('全屏模式不可用！');
@@ -43,6 +58,16 @@
           launchFullScreen(elementWrap)
         }
       }, false);
+    }
+
+    /*
+    * 检测当前是否支持全屏
+    */
+    function fullscreenEnabled() {
+      return document.fullscreenEnabled || 
+      document.webkitFullscreenEnabled || 
+      document.mozFullscreenEnabled ||
+      document.msFullscreenEnabled
     }
 
 
@@ -82,11 +107,23 @@
     * param {Element} element
     */
     function addEvent(element) {
-      element.addEventListener('fullscreenchange', function(e) {
-        console.log('--fullscreenchange--:', e);
+      var fullscreenchangeEvt = '';
+      if ('onwebkitfullscreenchange' in element) {
+        fullscreenchangeEvt = 'webkitfullscreenchange';
+      }
+      if ('onmozfullscreenchange' in element) {
+        fullscreenchangeEvt = 'mozfullscreenchange';
+      }
+      if ('onmsfullscreenchange' in element) {
+        fullscreenchangeEvt = 'msfullscreenchange';
+      }
+      if ('onfullscreenchange' in element) {
+        fullscreenchangeEvt = 'fullscreenchange';
+      }
+      element.addEventListener(fullscreenchangeEvt, function(e) {
+        console.log('--fullscreenchange--:', fullscreenchangeEvt, e);
       }, false);
     }
-
 
   </script>
 </body>
