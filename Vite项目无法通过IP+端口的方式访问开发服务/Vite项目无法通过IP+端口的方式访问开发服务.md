@@ -9,7 +9,7 @@
 vite开发体验极佳，但是在项目完成的时候，想通过本地服务提前发给产品确认UI、交互等细节的时候，发现通过本机IP无法访问当前开发服务，但是localhost是可以访问的
 
 ### Why?
-
+file:///E:/study/myblog/Element修改弹窗类组件的层级/Element修改弹窗类组件的层级.md
 使用vite运行项目的时候，控制台会只出现了localhost的方式访问项目，这应该是没有将服务暴露在局域网中
 
 ![why](./why.png)
